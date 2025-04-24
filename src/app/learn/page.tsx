@@ -1,46 +1,46 @@
-'use client';
+"use client";
 
 export default function Learn() {
   return (
-    <div className="p-6 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4">Learn About Our Mission</h1>
-      <p className="mb-4">
-        Welcome to the learning section of our platform. This space is dedicated to explaining our goals,
-        how premium KNS domain sales contribute to the broader Rednose token project, and the future benefits 
-        for our early supporters.
+    <div className="p-6 max-w-4xl mx-auto space-y-6">
+      <h1 className="text-3xl font-bold">Our Mission</h1>
+      <p className="text-lg text-gray-700">
+        We curate and sell premium KNS domains to fund the RedNose token ecosystem. By investing in a top-tier domain, you’re supporting development,
+        liquidity, and community growth, while securing a valuable on-chain asset.
       </p>
 
-      <h2 className="text-2xl font-semibold mt-6 mb-2">What We`re Doing</h2>
-      <p className="mb-4">
-        While we are not the creators of the Kaspa Name System (KNS), we actively curate and sell premium 
-        KNS domains as digital assets. These domains are part of the Kaspa ecosystem and provide identity, 
-        branding, and utility on-chain.
+      <h2 className="text-2xl font-semibold mt-8">What We Do</h2>
+      <p className="text-gray-700">
+        We source high-value Kaspa Name System (KNS) domains and offer them as NFTs. Each domain serves as a unique digital identity on Kaspa,
+        enabling branding, wallets, and dApps to stand out.
       </p>
 
-      <h2 className="text-2xl font-semibold mt-6 mb-2">Why Premium Domains?</h2>
-      <ul className="list-disc list-inside mb-4">
-        <li>Short, memorable names ideal for wallets and dApps</li>
-        <li>Strong potential for future resale value</li>
-        <li>Ownership tied to identity in the Kaspa ecosystem</li>
-        <li>Scarcity and exclusivity of top-tier names</li>
+      <h2 className="text-2xl font-semibold mt-8">Why Premium Domains</h2>
+      <ul className="list-disc list-inside text-gray-700 space-y-2">
+        <li>Memorable, brandable names for wallets and dApps</li>
+        <li>Scarce assets with strong resale potential</li>
+        <li>On-chain identity tied to your brand or project</li>
+        <li>Exclusivity through carefully selected top-tier names</li>
       </ul>
 
-      <h2 className="text-2xl font-semibold mt-6 mb-2">Funding the Rednose Token Project</h2>
-      <p className="mb-4">
-        The funds raised from premium domain sales directly support the development and launch of the Rednose token.
-        This includes liquidity, marketing, development, and ecosystem growth. Your purchase not only secures a valuable 
-        domain but also helps build the future of Rednose.
+      <h2 className="text-2xl font-semibold mt-8">Funding the RedNose Token</h2>
+      <p className="text-gray-700">
+        Proceeds from domain sales are allocated to RedNose token initiatives:
+      </p>
+      <ul className="list-disc list-inside text-gray-700 space-y-1">
+        <li><strong>40%</strong> - Owner rewards and project leadership</li>
+        <li><strong>40%</strong> - Liquidity for token stability</li>
+        <li><strong>20%</strong> - Listing, development, and ecosystem expansion</li>
+      </ul>
+
+      <h2 className="text-2xl font-semibold mt-8">Token Rewards for Domain Owners</h2>
+      <p className="text-gray-700">
+        Early domain buyers qualify for upcoming RedNose token airdrops. Allocation tiers will depend on factors like domain value, age,
+        and community participation.
       </p>
 
-      <h2 className="text-2xl font-semibold mt-6 mb-2">Token Allocation for Domain Buyers</h2>
-      <p className="mb-4">
-        As a thank-you to our early supporters, a portion of the future Rednose token supply will be allocated to verified
-        domain buyers. Eligibility and allocation may depend on factors like domain value, age, or ownership snapshot dates.
-      </p>
-
-      <p className="mt-6 text-sm text-gray-600">
-        Stay tuned for updates on snapshots, airdrop timelines, and the Rednose token launch. Your domain might unlock 
-        more than you expect.
+      <p className="text-sm text-gray-500 mt-8">
+        Stay tuned for announcements on snapshots, airdrop schedules, and token launch details. Claim your domain and join the RedNose community today!
       </p>
     </div>
   );
