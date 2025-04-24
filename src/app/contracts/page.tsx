@@ -36,7 +36,7 @@ export default function Contracts() {
       <h2 className="text-2xl font-semibold mt-6 mb-2">Future Utility</h2>
       <p className="mb-4">
         Rednose will be used for staking, governance voting, early access features, and potential ecosystem incentives 
-        including partner project integrations. We're building for utility beyond speculation.
+        including partner project integrations. We`re building for utility beyond speculation.
       </p>
 
       <p className="mt-6 text-sm text-gray-600">
