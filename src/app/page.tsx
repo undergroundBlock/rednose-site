@@ -1,103 +1,73 @@
-import Image from "next/image";
-
+// app/page.tsx
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+    <div className="space-y-24">
+      {/* Hero Section */}
+      <section className="text-white bg-gradient-to-br from-[#70C7BA] to-[#54B2A1] py-24">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
+            RedNose Token
+          </h1>
+          <p className="text-xl md:text-2xl mb-8">
+            A fair-launched Kaspa meme token with zero team allocation and NFT rewards.
+          </p>
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/mint"
+            className="inline-block bg-white text-[#54B2A1] font-semibold px-8 py-3 rounded-full text-lg shadow-md hover:bg-gray-100 transition"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+            Mint NFTs Now
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+      </section>
+
+      {/* Features Section */}
+      <section className="max-w-6xl mx-auto px-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Why RedNose?</h2>
+        <div className="grid md:grid-cols-3 gap-12 text-center">
+          <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+            <h3 className="text-xl font-semibold mb-3">Fair Launch</h3>
+            <p>No presale. No pre-mine. RedNose is built for the community.</p>
+          </div>
+          <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+            <h3 className="text-xl font-semibold mb-3">NFT Rewards</h3>
+            <p>Mint NFTs that reflect your RedNose spirit. No team allocation.</p>
+          </div>
+          <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+            <h3 className="text-xl font-semibold mb-3">Powered by Kaspa</h3>
+            <p>Blazing-fast blocks with PoW and DAG architecture.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Domain Sales Funding Section */}
+      <section className="bg-[#F7FDFC] py-20 text-center px-6">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">Domain Sales Supporting RedNose</h2>
+        <p className="text-lg mb-8 max-w-xl mx-auto">
+          When you purchase a domain in the KNS domain market, a portion of the sale directly contributes to funding the RedNose token. 
+          Each domain has a specific allocation percentage, helping to fuel further development, liquidity, and adoption of RedNose within the Kaspa ecosystem. 
+          Your purchase is more than just an asset—it's an investment in the future of decentralized finance and meme tokens on Kaspa.
+        </p>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/domains"
+          className="bg-[#54B2A1] text-white font-semibold px-10 py-3 rounded-full text-lg shadow-md hover:bg-[#469f91] transition"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+          Explore Domains
         </a>
+      </section>
+
+      {/* Call to Action */}
+      <section className="bg-[#F7FDFC] py-20 text-center px-6">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to get your RedNose?</h2>
+        <p className="text-lg mb-8 max-w-xl mx-auto">
+          Join the fun and become part of the community. Mint your NFT and show off your RedNose!
+        </p>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/mint"
+          className="bg-[#54B2A1] text-white font-semibold px-10 py-3 rounded-full text-lg shadow-md hover:bg-[#469f91] transition"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
+          Go to Mint Page
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
     </div>
   );
 }
