@@ -33,7 +33,7 @@ const Header = () => {
         <nav className="hidden md:flex space-x-8">
           <Link href="/" className={`text-lg ${isActive("/")}`}>Home</Link>
           <Link href="/mint" className={`text-lg ${isActive("/mint")}`}>Mint</Link>
-          <Link href="/about" className={`text-lg ${isActive("/about")}`}>About</Link>
+          <Link href="/domains" className={`text-lg ${isActive("/domains")}`}>Domains</Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -62,7 +62,7 @@ const Header = () => {
           <nav className="space-y-3">
             <Link href="/" className={`block text-lg ${isActive("/")}`}>Home</Link>
             <Link href="/mint" className={`block text-lg ${isActive("/mint")}`}>Mint</Link>
-            <Link href="/about" className={`block text-lg ${isActive("/about")}`}>About</Link>
+            <Link href="/domains" className={`block text-lg ${isActive("/domains")}`}>Domains</Link>
           </nav>
         </div>
       )}
