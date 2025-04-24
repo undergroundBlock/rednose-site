@@ -7,7 +7,7 @@ import Link from 'next/link';
 export default function Sidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false); // desktop collapse
   const [isMobile, setIsMobile] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(true); // mobile starts collapsed
+  const [mobileOpen] = useState(true); // mobile starts collapsed
 
   useEffect(() => {
     const handleResize = () => {
