@@ -1,6 +1,5 @@
 // src/app/domains/page.tsx
 import React from "react";
-import Link from "next/link"; // Import Link from Next.js
 
 const domainsData = [
   { domain: "999club.kas", price: "99900", sold: false, rednoseAllocation: "0.999", buyLink: "https://www.kaspa.com/domains/marketplace/999club.kas/4579926d02dfc1eed2d578f7cb81b356f327c2fac3fbb1be9c81d794e98184b5i0" },

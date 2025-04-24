@@ -10,7 +10,7 @@ export default function Learn() {
         for our early supporters.
       </p>
 
-      <h2 className="text-2xl font-semibold mt-6 mb-2">What We're Doing</h2>
+      <h2 className="text-2xl font-semibold mt-6 mb-2">What We`re Doing</h2>
       <p className="mb-4">
         While we are not the creators of the Kaspa Name System (KNS), we actively curate and sell premium 
         KNS domains as digital assets. These domains are part of the Kaspa ecosystem and provide identity, 

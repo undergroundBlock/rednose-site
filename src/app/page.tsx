@@ -45,7 +45,7 @@ export default function Home() {
         <p className="text-lg mb-8 max-w-xl mx-auto">
           When you purchase a domain in the KNS domain market, a portion of the sale directly contributes to funding the RedNose token. 
           Each domain has a specific allocation percentage, helping to fuel further development, liquidity, and adoption of RedNose within the Kaspa ecosystem. 
-          Your purchase is more than just an asset—it's an investment in the future of decentralized finance and meme tokens on Kaspa.
+          Your purchase is more than just an asset—it`s an investment in the future of decentralized finance and meme tokens on Kaspa.
         </p>
         <a
           href="/domains"
