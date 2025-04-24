@@ -18,7 +18,7 @@ export default function MintPage() {
       await new Promise((res) => setTimeout(res, 2000)); // Fake delay
       setSuccess(true);
     } catch (e) {
-      setError("Minting failed. Please try again.");
+      setError("Minting failed. Please try again: " + e);
     } finally {
       setMinting(false);
     }
