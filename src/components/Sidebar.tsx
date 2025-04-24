@@ -20,8 +20,7 @@ export default function Sidebar() {
   }, []);
 
   const toggleSidebar = () => setIsCollapsed(!isCollapsed);
-  const toggleMobileCollapse = () => setMobileOpen(!mobileOpen);
-
+  
   return (
     <aside
       className={`
