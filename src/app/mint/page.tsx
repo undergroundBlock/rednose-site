@@ -35,7 +35,7 @@ export default function MintPage() {
       <div className="w-full max-w-sm mx-auto bg-white rounded-xl shadow-lg p-6 mb-10">
         <div className="bg-gray-100 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
           <Image
-            src="/nft-preview.png"
+            src="/rednose-site/nft-preview.png"
             alt="RedNose Pitbull NFT Preview"
             width={400}
             height={300}
