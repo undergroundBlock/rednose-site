@@ -20,13 +20,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "RedNose Token",
   icons: {
-    icon: "public/favicon.ico", // 👈 Add this line
+    icon: `${process.env.NEXT_PUBLIC_BASE_PATH}/favicon.ico`, // 👈 Add this line
   },
   description: "RedNose - Fair launched Kaspa meme token with NFTs and zero team allocation",
   openGraph: {
     title: "RedNose Token",
     description: "Fair launched Kaspa meme token with NFTs and zero team allocation",
-    url: "https://yourwebsite.com",
+    url: "https://undergroundblock.github.io/rednose-site/",
   },
   twitter: {
     card: "summary_large_image", // Optional: Set a summary card type for Twitter
