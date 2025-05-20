@@ -1,0 +1,1 @@
+// src/app/domains/categories/page.tsx

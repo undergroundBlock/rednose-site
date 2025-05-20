@@ -45,12 +45,23 @@ export default function Sidebar() {
 
       {/* Content */}
       {(mobileOpen || !isMobile) && (
-        <div className={`mt-2 space-y-3 ${isMobile ? 'flex justify-around' : 'block'}`}>
-          <SidebarLink icon="🎨" label="Mint" collapsed={isCollapsed || isMobile} href="/mint" />
-          <SidebarLink icon="💰" label="Liquidity" collapsed={isCollapsed || isMobile} href="/liquidity" />
-          <SidebarLink icon="🌍" label="Domains" collapsed={isCollapsed || isMobile} href="/domains" />
-          <SidebarLink icon="📄" label="Contracts" collapsed={isCollapsed || isMobile} href="/contracts" />
-          <SidebarLink icon="🧠" label="Learn" collapsed={isCollapsed || isMobile} href="/learn" />
+        <div className={`space-y-3 ${isMobile ? 'flex justify-around' : 'block'}`}>
+          <div className={`bg-[#70C7BA] text-white p-2 space-y-3`}>
+            <p>Categories</p>
+          </div>
+          <SidebarLink icon="🔤" label="Short Names" collapsed={isCollapsed || isMobile} href="/categories/short" />
+          <SidebarLink icon="#️⃣" label="999 Club" collapsed={isCollapsed || isMobile} href="/categories/999club" />
+          <SidebarLink icon="🔢" label="10k Club" collapsed={isCollapsed || isMobile} href="/categories/10kclub" />
+          <SidebarLink icon="💯" label="100k Club" collapsed={isCollapsed || isMobile} href="/categories/100kclub" />
+          <SidebarLink icon="🏷️" label="Brandables" collapsed={isCollapsed || isMobile} href="/categories/brandables" />
+          <SidebarLink icon="🌍" label="Real Words" collapsed={isCollapsed || isMobile} href="/categories/real-words" />
+          <SidebarLink icon="💼" label="Business" collapsed={isCollapsed || isMobile} href="/categories/business" />
+          <SidebarLink icon="🎮" label="Gaming" collapsed={isCollapsed || isMobile} href="/categories/gaming" />
+          <SidebarLink icon="🧠" label="AI & Tech" collapsed={isCollapsed || isMobile} href="/categories/ai-tech" />
+          <SidebarLink icon="💰" label="Finance" collapsed={isCollapsed || isMobile} href="/categories/finance" />
+          <SidebarLink icon="🌐" label="Web3 / dApps" collapsed={isCollapsed || isMobile} href="/categories/web3" />
+          <SidebarLink icon="🧸" label="Memes & Fun" collapsed={isCollapsed || isMobile} href="/categories/memes" />
+          <SidebarLink icon="📈" label="Trending" collapsed={isCollapsed || isMobile} href="/categories/trending" />
         </div>
       )}
     </aside>
