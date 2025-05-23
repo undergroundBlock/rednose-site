@@ -4,8 +4,8 @@ export const financeDomains = [
     name: "finance123.kas",
     listed: true,
     price: 1500,
-    sellerTelegram: "@financeSeller",
-    kaspaLink: "https://kaspa.com/domain/finance123.kas",
+    sellerTelegram: "financeSeller", // no '@'
+    kaspaLink: "https://kaspa.com/domain/finance.kas",
   },
   // more domains...
 ];

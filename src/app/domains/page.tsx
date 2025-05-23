@@ -1,3 +1,4 @@
+// src/app/domains/page.tsx
 import React from "react";
 import Link from "next/link";
 
@@ -8,7 +9,6 @@ const domainsData = [
   // ...rest of the domains
 ];
 
-// Extract unique categories
 const categories = [...new Set(domainsData.map(d => d.category).filter(Boolean))];
 
 const parseKasValue = (price: string): number =>
@@ -30,16 +30,15 @@ const DomainPage = () => {
         <div className="lg:columns-2 lg:gap-8 text-gray-700 text-lg leading-relaxed">
           <p>
             Welcome to the <strong>RedNose premium domain marketplace</strong> – a curated platform showcasing only the most unique and valuable domains in the Kaspa ecosystem.
-            Every domain listed here is special: it's either a recognizable name, a strong brand candidate, or a high-potential investment.
+            Every domain listed here is special: it&apos;s either a recognizable name, a strong brand candidate, or a high-potential investment.
           </p>
           <p>
-            We filter and categorize each domain by type – from <strong>Clubs</strong> and <strong>Characters</strong> to <strong>Memes</strong> and <strong>Finance</strong> – making it easy to browse and discover exactly what you’re looking for.
-            There’s a <strong>one-time 100 KAS listing fee</strong>, which ensures only serious and valuable domains make it to the market. Nobody will pay 100 KAS to list “whatbbhshj.kas” – but something like <strong>bartsimpson.kas</strong> definitely earns its spot.
+            We filter and categorize each domain by type – from <strong>Clubs</strong> and <strong>Characters</strong> to <strong>Memes</strong> and <strong>Finance</strong> – making it easy to browse and discover exactly what you&apos;re looking for.
+            There&apos;s a <strong>one-time 100 KAS listing fee</strong>, which ensures only serious and valuable domains make it to the market. Nobody will pay 100 KAS to list “whatbbhshj.kas” – but something like <strong>bartsimpson.kas</strong> definitely earns its spot.
           </p>
         </div>
       </div>
 
-      {/* Category Links */}
       <div className="space-y-4">
         <h2 className="text-3xl font-bold text-gray-900">Browse by Category</h2>
         <div className="flex flex-wrap gap-3">
@@ -55,7 +54,6 @@ const DomainPage = () => {
         </div>
       </div>
 
-      {/* Stats Section */}
       <div className="space-y-6">
         <h2 className="text-4xl font-bold text-center text-gray-900">Market Stats Overview</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -73,7 +71,6 @@ const DomainPage = () => {
         </div>
       </div>
 
-      {/* Domains Table */}
       <div className="overflow-x-auto bg-white rounded-lg shadow-lg">
         <table className="min-w-full table-auto divide-y divide-gray-200">
           <thead className="bg-gradient-to-r from-[#70C7BA] to-[#54B2A1] text-white">

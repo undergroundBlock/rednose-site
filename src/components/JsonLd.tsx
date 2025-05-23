@@ -1,13 +1,16 @@
-// src/components/JsonLd.tsx
-type Props = {
-  data: Record<string, any>;
-};
+import React from "react";
 
-export const JsonLd = ({ data }: Props) => {
+type JsonLdData = Record<string, unknown>;
+
+interface JsonLdProps {
+  data: JsonLdData;
+}
+
+export function JsonLd({ data }: JsonLdProps) {
   return (
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
     />
   );
-};
+}

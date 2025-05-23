@@ -4,6 +4,11 @@
 import { Domain } from "@/data/types";
 
 export function DomainCard({ domain }: { domain: Domain }) {
+  // Safe telegram username without @ and only if defined
+  const telegramUsername = domain.sellerTelegram
+    ? domain.sellerTelegram.replace("@", "")
+    : null;
+
   return (
     <div className="border rounded-xl p-4 shadow-md bg-white flex flex-col gap-2">
       <div className="flex justify-between items-center">
@@ -21,57 +26,65 @@ export function DomainCard({ domain }: { domain: Domain }) {
       <p>
         <strong>Price:</strong> {domain.price} KAS
       </p>
-      <p>
-        <strong>Seller Telegram:</strong>{" "}
-        <a
-          href={`https://t.me/${domain.sellerTelegram.replace("@", "")}`}
-          target="_blank"
-          className="text-blue-600 underline"
-        >
-          {domain.sellerTelegram}
-        </a>
-      </p>
+
+      {telegramUsername && (
+        <p>
+          <strong>Seller Telegram:</strong>{" "}
+          <a
+            href={`https://t.me/${telegramUsername}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 underline"
+          >
+            @{telegramUsername}
+          </a>
+        </p>
+      )}
+
       <a
         href={domain.kaspaLink}
         target="_blank"
+        rel="noopener noreferrer"
         className="text-sm text-purple-700 underline"
       >
         View on Kaspa.com →
       </a>
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
+          __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Product",
             name: domain.name,
-            description: "Premium KNS domain pointing to a Kaspa wallet. Perfect for identity, payments, or branding.",
+            description:
+              "Premium KNS domain pointing to a Kaspa wallet. Perfect for identity, payments, or branding.",
             sku: `KNS-${domain.name}`,
             productID: domain.name,
             url: domain.kaspaLink,
             category: "KNS Domain",
             offers: {
-                "@type": "Offer",
-                price: domain.price,
-                priceCurrency: "KAS",
-                availability: domain.listed
+              "@type": "Offer",
+              price: domain.price,
+              priceCurrency: "KAS",
+              availability: domain.listed
                 ? "https://schema.org/InStock"
                 : "https://schema.org/OutOfStock",
-                seller: {
+              seller: {
                 "@type": "Person",
-                name: domain.sellerTelegram?.replace("@", "") || "Unknown",
-                },
+                name: telegramUsername || "Unknown",
+              },
             },
             additionalProperty: [
-                {
+              {
                 "@type": "PropertyValue",
                 name: "KNS Type",
                 value: "Kaspa Domain Name",
-                },
+              },
             ],
-            }),
+          }),
         }}
-        />
+      />
     </div>
   );
 }

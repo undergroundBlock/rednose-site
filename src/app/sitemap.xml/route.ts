@@ -1,9 +1,11 @@
+export const dynamic = "force-static";
+export const revalidate = 0;
 // src/app/sitemap.xml/route.ts
 import { categoriesData } from "@/data/categoriesManifest";
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const baseUrl = "https://rednose.market"; // ✅ Replace with your live domain
+  const baseUrl = "http://localhost:3000/rednose-site/"; // ✅ Replace with your live domain
 
   const staticRoutes = [
     "",

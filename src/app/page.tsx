@@ -1,4 +1,3 @@
-// src/app/page.tsx
 import Link from "next/link";
 import { categoriesData } from "@/data/categoriesManifest";
 
@@ -31,7 +30,7 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-6">
           {Object.entries(categoriesData).map(([key, value]) => (
             <Link
-              href={`/domains/categories/${key}`}
+              href={`/domains/category/${key}`}
               key={key}
               className="block p-6 bg-white shadow-md rounded-xl hover:shadow-lg transition"
             >
@@ -62,6 +61,7 @@ export default function Home() {
                 <a
                   href={domain.kaspaLink}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="text-purple-600 underline text-sm"
                 >
                   View on Kaspa
@@ -75,10 +75,10 @@ export default function Home() {
       <section className="max-w-4xl mx-auto text-center px-6 pb-24">
         <h2 className="text-3xl font-bold mb-6">Why RedNose?</h2>
         <p className="text-lg text-gray-700">
-          This marketplace curates only premium KNS domains—names with real value, brand potential,
-          or cultural relevance. With a one-time listing fee of 100 KAS, only special domains make
-          it in. Categories like characters, tech, finance, and gaming help buyers quickly find
-          what they're looking for.
+        This marketplace curates only premium KNS domains—names with real value, brand potential,
+        or cultural relevance. With a one-time listing fee of 100 KAS, only special domains make
+        it in. Categories like characters, tech, finance, and gaming help buyers quickly find
+        what they&rsquo;re looking for.
         </p>
       </section>
     </main>
