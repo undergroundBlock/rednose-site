@@ -19,7 +19,7 @@ export default function DomainCategoriesPage() {
         {Object.entries(categoriesData).map(([slug, category]) => (
           <Link
             key={slug}
-            href={`/categories/${slug}`}
+            href={`/categories/category/${slug}`}
             className="block border border-gray-200 rounded-2xl p-4 hover:shadow-md transition-shadow"
           >
             <h2 className="text-xl font-semibold mb-2">{category.title}</h2>

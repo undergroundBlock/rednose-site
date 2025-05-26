@@ -1,73 +1,151 @@
 "use client";
+
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 
-const Header = () => {
+export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const isActive = (path: string) =>
-    pathname === path ? "text-gray-200" : "hover:text-gray-200";
+  const navItems = [
+    { label: "Home", href: "/" },
+    { label: "Domains", href: "/domains" },
+    { label: "Categories", href: "/domains/categories" },
+    { label: "Learn", href: "/learn" }, // ✅ SEO-optimized Learn page
+  ];
+
+  const isActive = (href: string) =>
+    pathname === href
+      ? "text-white after:block after:h-0.5 after:bg-white after:w-full"
+      : "text-white/80 hover:text-white";
+
+  const premiumDomains = [
+    "wallet.kas",
+    "pay.kas",
+    "nft.kas",
+    "dex.kas",
+    "ai.kas",
+    "btc.kas",
+    "eth.kas",
+    "chat.kas",
+    "swap.kas",
+    "gas.kas",
+  ];
 
   return (
-    <header className="bg-[#70C7BA] text-white p-4 shadow-lg">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Logo Section */}
-        <div className="flex items-center space-x-2">
-          <Image
-            src="/rednose-site/favicon.svg"
-            alt="RedNose Logo"
-            width={32}
-            height={32}
-            className="w-8 h-8"
-            priority
-          />
-          <h1 className="text-4xl font-bold tracking-tight">
-            Red<span className="text-red-500">N</span>ose
-          </h1>
-        </div>
+    <header className="sticky top-0 z-50">
+      {/* Top Bar */}
+      <div className="bg-[#70C7BA]/75 backdrop-blur-md shadow-md">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 md:py-4">
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-2">
+            <Image
+              src="/kaspadomains-logo.jpg"
+              alt="KaspaDomains"
+              width={40}
+              height={40}
+              className="w-10 h-10"
+              priority
+            />
+            <span className="text-2xl md:text-3xl font-extrabold tracking-tight text-white">
+              Kaspa<span className="text-[#FFD700]">Domains</span>
+            </span>
+          </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
-          <Link href="/" className={`text-lg ${isActive("/")}`}>Home</Link>
-          <Link href="/mint" className={`text-lg ${isActive("/mint")}`}>Mint</Link>
-          <Link href="/domains" className={`text-lg ${isActive("/domains")}`}>Domains</Link>
-        </nav>
+          {/* Nav + Search + CTA */}
+          <div className="hidden md:flex items-center space-x-6">
+            <nav className="flex space-x-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`relative px-1 pb-1 font-medium transition-colors duration-200 ${isActive(item.href)}`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search premium domains…"
+                className="w-48 px-3 py-1.5 rounded-lg text-sm bg-white/20 placeholder-white/60 focus:bg-white focus:text-gray-800 focus:outline-none transition-colors"
+              />
+              <svg
+                className="absolute right-2 top-1/2 h-4 w-4 text-white/60 -translate-y-1/2"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </div>
+
+            <button className="ml-4 px-4 py-1.5 bg-white text-[#70C7BA] font-semibold rounded-lg shadow hover:bg-white/90 transition">
+              Connect Wallet
+            </button>
+          </div>
+
+          {/* Mobile Menu Toggle */}
           <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label={menuOpen ? "Close Menu" : "Open Menu"}
-            className="p-2 rounded-md transition-transform duration-200"
+            className="md:hidden p-2 text-white/90 hover:text-white transition"
+            onClick={() => setMenuOpen((o) => !o)}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
           >
-            {menuOpen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
+            <svg
+              className="w-6 h-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              {menuOpen ? (
+                <path d="M6 18L18 6M6 6l12 12" strokeLinecap="round" strokeLinejoin="round" />
+              ) : (
+                <path d="M4 6h16M4 12h16M4 18h16" strokeLinecap="round" strokeLinejoin="round" />
+              )}
+            </svg>
           </button>
+        </div>
+      </div>
+
+      {/* 🔥 Premium Domains Ticker */}
+      <div className="bg-gradient-to-r from-[#FFD700]/20 to-[#FFD700]/10 border-t border-[#FFD700]/20 overflow-hidden whitespace-nowrap">
+        <div className="animate-marquee flex gap-8 py-2 px-4 text-white text-sm md:text-base font-semibold hover:[animation-play-state:paused]">
+          {premiumDomains.map((domain, index) => (
+            <a
+              key={index}
+              href={`/domains/${domain}`}
+              className="flex-shrink-0 hover:underline text-[#FFD700] whitespace-nowrap"
+            >
+              🔥 {domain} — <span className="underline underline-offset-4">Buy Now</span>
+            </a>
+          ))}
         </div>
       </div>
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#70C7BA] text-white p-4 space-y-3 transition-transform transform translate-y-0">
-          <nav className="space-y-3">
-            <Link href="/" className={`block text-lg ${isActive("/")}`}>Home</Link>
-            <Link href="/mint" className={`block text-lg ${isActive("/mint")}`}>Mint</Link>
-            <Link href="/domains" className={`block text-lg ${isActive("/domains")}`}>Domains</Link>
-          </nav>
-        </div>
+        <nav className="md:hidden bg-[#70C7BA] px-4 pb-4 space-y-2 animate-slide-down">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`block px-2 py-2 rounded-lg text-white/90 hover:text-white ${isActive(item.href)}`}
+            >
+              {item.label}
+            </Link>
+          ))}
+          <button className="w-full text-left px-2 py-2 bg-white text-[#70C7BA] rounded-lg font-medium">
+            Connect Wallet
+          </button>
+        </nav>
       )}
     </header>
   );
-};
-
-export default Header;
+}
